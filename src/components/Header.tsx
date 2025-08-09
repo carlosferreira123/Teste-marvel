@@ -1,4 +1,7 @@
-import { Search } from 'lucide-react';
+import { Search, ShoppingCart } from 'lucide-react';
+import { useAppSelector } from '../hooks/useAppSelector';
+
+
 
 
 import {
@@ -10,10 +13,16 @@ import {
     HeaderActions,
     SearchContainer,
     SearchInput,
+    CartButton,
+    CartButtonText,
+    CartBadge,
 
 } from './Header.styled';
 
 export const Header = () => {
+    const cartItems = useAppSelector(state => state.cart.items);
+    const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
+
 
     return (
         <HeaderContainer>
@@ -29,7 +38,13 @@ export const Header = () => {
                         <SearchInput placeholder="Buscar quadrinhos..." />
                     </SearchContainer>
 
-
+                    <CartButton to="/cart">
+                        <ShoppingCart size={16} />
+                        {itemCount > 0 && (
+                            <CartBadge>{itemCount}</CartBadge>
+                        )}
+                        <CartButtonText>Carrinho</CartButtonText>
+                    </CartButton>
                 </HeaderActions>
             </HeaderContent>
         </HeaderContainer>
