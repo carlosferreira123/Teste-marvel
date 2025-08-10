@@ -87,7 +87,8 @@ const transformMarvelComic = (marvelComic: MarvelComic): Comic => {
         writers: writers.length > 0 ? writers : ['Autor não informado'],
         artists: artists.length > 0 ? artists : ['Artista não informado'],
         characters: characters.length > 0 ? characters : ['Personagens não informados'],
-        rating: Math.random() * 2 + 3, // Random rating between 3-5
+        rating: Number((Math.random() * 2 + 3).toFixed(1)),
+
         availability: 'available' as const,
         rarity: 'common',
     };
