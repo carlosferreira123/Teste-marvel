@@ -122,17 +122,7 @@ export default function Cart() {
                                         />
                                     </S.ItemImage>
 
-                                    <S.ItemDetails>
-                                        <S.ItemTitle to={`/comic/${item.comic.id}`}>
-                                            {item.comic.title}
-                                        </S.ItemTitle>
-                                        <S.ItemMeta>
-                                            {item.comic.series} #{item.comic.issueNumber}
-                                        </S.ItemMeta>
-                                        <S.ItemPrice>
-                                            {formatPrice(item.comic.price)}
-                                        </S.ItemPrice>
-                                    </S.ItemDetails>
+
 
                                     <S.QuantityControls>
                                         <S.QuantityButton
@@ -156,6 +146,18 @@ export default function Cart() {
                                         <Trash2 className="h-4 w-4" />
                                     </S.RemoveButton>
                                 </S.ItemContent>
+
+                                <S.ItemDetails>
+                                    <S.ItemTitle to={`/comic/${item.comic.id}`}>
+                                        {item.comic.title}
+                                    </S.ItemTitle>
+                                    <S.ItemMeta>
+                                        {item.comic.series} #{item.comic.issueNumber}
+                                    </S.ItemMeta>
+                                    <S.ItemPrice>
+                                        {formatPrice(item.comic.price)}
+                                    </S.ItemPrice>
+                                </S.ItemDetails>
                             </S.CartItem>
                         ))}
                     </S.CartItems>
