@@ -1,69 +1,84 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marvel Comics Collection 🦸‍♂️
+Um projeto front-end desenvolvido em React com TypeScript que consome a API da Marvel para exibir quadrinhos, personagens e gerenciar um carrinho de compras.
+Configuração Inicial
+ Iniciei o projeto utilizando Vite com template TypeScript para maior eficiência
+ Configurei o ambiente de desenvolvimento com:
+ -Dependencias proposta pelo o projeto 
 
-Currently, two official plugins are available:
+ Estruturação do Projeto:
+ - Adotei uma arquitetura modular organizada em:
+ - components/ para elementos reutilizáveis
+ - pages/ para as rotas principais
+ - services/ para integração com a API Marvel
+ - store/ para gerenciamento de estado com Redux Toolkit
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ Desenvolvimento Iterativo:
+ - Implementei primeiro a listagem básica de quadrinhos
+ - Adicionei progressivamente:
+ - Paginação de resultados
+ - Sistema de carrinho
+ - Página de detalhes
+ 
+ Gerenciamento de Tempo:
+ - Priorizei as funcionalidades essenciais do escopo inicial
 
-## Expanding the ESLint configuration
+ Desafios Técnicos
+ - Enfrentei problemas com a chave da API Marvel:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🚀 Tecnologias Utilizadas
+React (Vite + TypeScript)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Redux Toolkit (Gerenciamento de estado global)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+React Query (@tanstack/query) (Cache e requisições à API)
+
+Styled Components (Estilização)
+
+React Router (Navegação entre páginas)
+
+API da Marvel (Dados dos quadrinhos)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✨ Funcionalidades
+✔ Catálogo de Quadrinhos
+
+Listagem dos quadrinhos mais recentes da Marvel
+
+✔ Detalhes do Quadrinho
+
+Página dedicada com informações como capa, descrição, preço e personagens envolvidos
+
+✔ Carrinho de Compras
+
+Adicionar/remover itens
+
+Quantidade ajustável
+
+Valor total calculado automaticamente
+
+✔ Responsividade
+
+Design adaptável para mobile e desktop
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Estrutura do Prjeto 
+src/
+├── components/          # Componentes reutilizáveis da UI
+├── data/                # Camada de abstração de dados
+├── hooks/               # Custom Hooks
+├── lib/                 # Utilitários e helpers
+├── pages/               # Componentes de página
+├── services/            # Comunicação com APIs externas
+├── store/               # Configuração do Redux (estado global)
+├── styles/              # Estilos globais e temas
+├── types/               # Tipos TypeScript
+└── utils/               # Funções utilitárias (opcional, pode ficar em lib)
+├── App.tsx              # Configuração principal
+└── main.tsx             # Ponto de entrada
