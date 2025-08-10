@@ -5,6 +5,8 @@ import { store } from "./store/store";
 import Index from "./pages/Index";
 
 import Cart from "./pages/Cart";
+import ComicDetails from "./pages/ComicDetails";
+import NotFound from "./pages/NotFound";
 
 
 const queryClient = new QueryClient();
@@ -15,8 +17,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/comic/:id" element={<ComicDetails />} />
 
           <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<NotFound />} />
 
         </Routes>
       </BrowserRouter>
