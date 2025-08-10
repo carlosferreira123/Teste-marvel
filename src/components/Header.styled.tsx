@@ -55,35 +55,7 @@ export const HeaderActions = styled.div`
   gap: 1rem;
 `;
 
-export const SearchContainer = styled.div`
-  display: none;
-  align-items: center;
-  gap: 0.5rem;
-  
-  @media (min-width: 768px) {
-    display: flex;
-  }
-`;
 
-export const SearchInput = styled.input`
-  width: 16rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid hsl(var(--border));
-  border-radius: 0.375rem;
-  background: hsl(var(--background) / 0.5);
-  color: hsl(var(--foreground));
-  font-size: 0.875rem;
-  
-  &::placeholder {
-    color: hsl(var(--muted-foreground));
-  }
-  
-  &:focus {
-    outline: none;
-    border-color: hsl(var(--primary));
-    box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2);
-  }
-`;
 
 export const CartButton = styled(Link)`
   position: relative;

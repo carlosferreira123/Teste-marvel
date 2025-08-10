@@ -1,4 +1,4 @@
-import { Search, ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { useAppSelector } from '../hooks/useAppSelector';
 
 
@@ -11,8 +11,7 @@ import {
     LogoText,
     LogoSubtext,
     HeaderActions,
-    SearchContainer,
-    SearchInput,
+
     CartButton,
     CartButtonText,
     CartBadge,
@@ -33,10 +32,7 @@ export const Header = () => {
                 </Logo>
 
                 <HeaderActions>
-                    <SearchContainer>
-                        <Search size={16} color="hsl(var(--muted-foreground))" />
-                        <SearchInput placeholder="Buscar quadrinhos..." />
-                    </SearchContainer>
+
 
                     <CartButton to="/cart">
                         <ShoppingCart size={16} />
