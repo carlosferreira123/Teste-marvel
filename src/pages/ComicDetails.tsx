@@ -1,19 +1,39 @@
-import { useState, } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { ArrowLeft, Star, Calendar, Users, BookOpen, ShoppingCart } from 'lucide-react';
+
 import { useAppDispatch } from '../hooks/useAppDispatch';
 import { addItem } from '../store/cartSlice';
 import { useToast } from '../hooks/use-toast';
-import { type Comic } from '../types/comic';
+import type { Comic } from '../types/comic';
 import * as S from './ComicDetails.styled';
+import { getComicById } from '../data/comic';
 
 export default function ComicDetails() {
-
-    const [comic,] = useState<Comic | null>(null);
-    const [loading,] = useState(true);
+    const { id } = useParams<{ id: string }>();
+    const [comic, setComic] = useState<Comic | null>(null);
+    const [loading, setLoading] = useState(true);
     const dispatch = useAppDispatch();
     const { toast } = useToast();
 
+    useEffect(() => {
+        const fetchComic = async () => {
+            if (!id) return;
 
+            setLoading(true);
+            try {
+                const fetchedComic = await getComicById(id);
+                setComic(fetchedComic || null);
+            } catch (error) {
+                console.error('Error loading comic:', error);
+                setComic(null);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchComic();
+    }, [id]);
 
     if (loading) {
         return (

@@ -12,7 +12,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
         const pages = [];
         const showPages = 5;
 
-        const startPage = Math.max(1, currentPage - Math.floor(showPages / 2));
+        let startPage = Math.max(1, currentPage - Math.floor(showPages / 2));
         const endPage = Math.min(totalPages, startPage + showPages - 1);
 
         if (endPage - startPage + 1 < showPages) {

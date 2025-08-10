@@ -290,3 +290,53 @@ export const ShippingNote = styled.p`
   text-align: center;
   margin-top: 1rem;
 `;
+
+
+export const CouponContainer = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+`;
+
+export const CouponInput = styled.input`
+  flex: 1;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.375rem;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+`;
+
+export const CouponApplyButton = styled.button`
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.375rem;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+`;
+
+export const AppliedRow = styled.div`
+  margin-bottom: 0.5rem;
+`;
+
+export const AppliedTag = styled.span`
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  cursor: pointer;
+`;
+
+export const DiscountValue = styled.span`
+  color: hsl(var(--secondary));
+  font-weight: 600;
+`;

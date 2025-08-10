@@ -39,7 +39,7 @@ export const BadgeContainer = styled.div`
   right: 0.5rem;
 `;
 
-export const Badge = styled.span<{ variant: 'available' | 'pre-order' | 'out-of-stock' }>`
+export const Badge = styled.span<{ variant: 'available' | 'pre-order' | 'out-of-stock' | 'rare' }>`
   display: inline-flex;
   align-items: center;
   padding: 0.25rem 0.5rem;
@@ -63,6 +63,11 @@ export const Badge = styled.span<{ variant: 'available' | 'pre-order' | 'out-of-
         return `
           background: hsl(var(--destructive));
           color: hsl(var(--destructive-foreground));
+        `;
+      case 'rare':
+        return `
+          background: hsl(var(--muted));
+          color: hsl(var(--muted-foreground));
         `;
       default:
         return `

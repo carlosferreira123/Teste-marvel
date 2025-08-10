@@ -61,6 +61,7 @@ export const ComicCard = ({ comic }: ComicCardProps) => {
                     alt={comic.title}
                 />
                 <BadgeContainer>
+                    {comic.rarity === 'rare' && (<Badge variant='rare'>Raro</Badge>)}
                     <Badge variant={comic.availability as 'available' | 'pre-order' | 'out-of-stock'}>
                         {getBadgeText(comic.availability)}
                     </Badge>
