@@ -12,6 +12,7 @@ export interface Comic {
     characters: string[];
     rating: number;
     availability: 'available' | 'out-of-stock' | 'pre-order';
+    rarity?: 'common' | 'rare';
 }
 
 export interface CartItem {
